@@ -11,7 +11,7 @@ namespace FileLength {
         /// <param name="maxLength"></param>
         /// <returns></returns>
         static void Main(DirectoryInfo path, int maxLength = 255) {
-            var files = Directory.EnumerateFiles(path.FullName, "*.*");
+            var files = Directory.EnumerateFiles(path.FullName, "*.*", SearchOption.AllDirectories);
 
             foreach (var item in files) {
                 var info = new FileInfo(item);
